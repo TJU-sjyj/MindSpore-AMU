@@ -40,6 +40,7 @@ python -c "import mindspore;mindspore.run_check()"
 
 ### Data preparation
 Download and extract ImageNet train and val images from http://image-net.org/. (https://pytorch.org/docs/stable/torchvision/datasets.html#imagefolder)
+
 Our dataset is set up to primarily follow [CaFo](https://github.com/OpenGVLab/CaFo).
 ### Evaluation
 To evaluate a pre-trained model on ImageNet val with GPUs run:
@@ -53,10 +54,7 @@ CUDA_VISIBLE_DEVICES={device_ids}  python test.py --checkpoint_version={CHECKPOI
 
 We provide a script file where the specific parameters can be referenced in [parse_args.py](https://github.com/TJU-sjyj/MindSpore-AMU/parse_args.py)
 
-```
-
-```
-For example:
+Run the training script:
 
 ```bash
 sh run.sh
