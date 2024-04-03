@@ -59,6 +59,17 @@ Run the training script:
 ```bash
 sh run.sh
 ```
+## Main Results
+|Method           | Acc-MindSpore  | Acc-PyTorch   | Checkpoint                                                          |
+| ------------------ | ----- | ------- | -------------------------- |
+| MoCov3-ResNet50-16shot-lmageNet1k   |  69.98 |  70.02   |   [Download]              |
+| MoCov3-ResNet50-8shot-lmageNet1k   | 68.21  |   68.25     |[Download]|
+| MoCov3-ResNet50-4shot-lmageNet1k   |  65.79  |   65.92     |[Download]|
+| MoCov3-ResNet50-2shot-lmageNet1k   |  64.19 |  64.25   |    [Download]     |
+| MoCov3-ResNet50-1shot-lmageNet1k   |  62.57 |   62.60     |[Download]|
+
+
+
 ## Acknowledgement
 This repo benefits from [Tip](https://github.com/gaopengcuhk/Tip-Adapter) and [CaFo](https://github.com/OpenGVLab/CaFo). Thanks for their works.
 
