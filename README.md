@@ -60,7 +60,7 @@ Run the training script:
 sh run.sh
 ```
 ## Acknowledgement
-This repo benefits from [Tip]([https://github.com/KaiyangZhou/Dassl.pytorch](https://github.com/gaopengcuhk/Tip-Adapter)) and [CaFo]([https://github.com/gaopengcuhk/CLIP-Adapter](https://github.com/OpenGVLab/CaFo)). Thanks for their works.
+This repo benefits from [Tip](https://github.com/gaopengcuhk/Tip-Adapter) and [CaFo](https://github.com/OpenGVLab/CaFo). Thanks for their works.
 
 
 
