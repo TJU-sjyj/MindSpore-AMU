@@ -1,0 +1,17 @@
+CUDA_VISIBLE_DEVICES=2 python /home/sjyjxz/mindaspore/AMU1/text_aux_two_loss.py\
+    --clip_backbone RN50\
+    --load_cache\
+    --rand_seed 2\
+    --torch_rand_seed 1\
+    --exp_name inik_16shot_r50_work\
+    --augment_epoch 1 \
+    --aux_model_name mocov3\
+    --init_alpha 0.65\
+    --lambda_merge 0.45\
+    --uncent_type none\
+    --normalize mean \
+    --aux_backbone resnet50\
+    --train_epoch 50\
+    --lr 1e-3\
+    --batch_size 16\
+    --shots 16

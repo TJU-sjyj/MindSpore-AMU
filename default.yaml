@@ -1,0 +1,36 @@
+# ------ root_path ------
+root_path: '/home/linkdata/zzl/'
+
+
+# ------ Load Cache and Features ------
+#load_cache: False
+#load_pre_feat: False
+
+load_cache: True
+load_pre_feat: True
+
+# ------ Hyperparamters ------
+search_hp: False
+# search_hp: False
+
+search_scale: [7, 3]
+search_step: [200, 20]
+
+init_beta: 1
+init_alpha: 0.6
+
+# ------ Basic Config ------
+dataset: 'ImageNet'
+shots: 16
+clip_backbone: 'ViT-B-16' # ['RN50', 'RN101', 'RN50x4', 'RN50x16', 'ViT-B/32', 'ViT-B/16']
+#aux_model_name: 'dino'
+#aux_backbone: 'resnet50'
+
+lr: 1.0e-3
+#lr: 0.005
+augment_epoch: 1
+batch_size: 256
+val_batch_size: 256
+num_classes: 1000
+
+train_epoch: 20

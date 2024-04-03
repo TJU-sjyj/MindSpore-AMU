@@ -1,0 +1,2 @@
+#!/usr/bin/env python
+CUDA_VISIBLE_DEVICES=0 python /home/sjyjxz/mindaspore/AMU1/test.py --checkpoint_version pytorch --checkpoint_path /home/sjyjxz/mindaspore/AMU1/caches/ImageNet/best_mocov3_resnet50_adapter_8shots.pt
