@@ -59,7 +59,7 @@ Run the training script:
 ```bash
 sh run.sh
 ```
-##Acknowledgement
+## Acknowledgement
 This repo benefits from [Tip]([https://github.com/KaiyangZhou/Dassl.pytorch](https://github.com/gaopengcuhk/Tip-Adapter)) and [CaFo]([https://github.com/gaopengcuhk/CLIP-Adapter](https://github.com/OpenGVLab/CaFo)). Thanks for their works.
 
 
