@@ -1,9 +1,13 @@
 # AMU-Tuning: Effective Logit Bias for CLIP-based Few-shot Learning
 
-This is an code implementation base on Mindspore2.2 and pytorch 1.7.1  of CVPR2024 paper (AMU-Tuning: Effective Logit Bias for CLIP-based Few-shot Learning), created by Qilong Wang, Zhenyi Lin and Yuwei Tang.
+This is an code implementation base on Mindspore2.2 and pytorch 1.7.1  of ***CVPR 2024*** paper **AMU-Tuning: Effective Logit Bias for CLIP-based Few-shot Learning**
 
 ## Introduction
-This paper proposes a novel AMU-Tuning method to learn effective logit bias for CLIP-based few shot classification. Specifically, our AMU-Tuning predicts logit bias by exploiting the appropriate Auxiliary features, which are fed into an efficient feature-initialized linear classifier with Multi-branch training. Finally, an Uncertainty based fusion is developed to incorporate logit bias into CLIP for few-shot classification. The experiments are conducted on several widely used benchmarks, and the results show AMU-Tuning clearly outperforms its counterparts while achieving state-of-the-art performance of CLIP based few-shot learning without bells and whistles.
+This paper proposes a novel **AMU-Tuning** method to learn effective logit bias for CLIP-based few shot classification. Specifically, our AMU-Tuning predicts logit bias by exploiting the appropriate ***A***uxiliary features, which are fed into an efficient feature-initialized linear classifier with ***M***ulti-branch training. Finally, an ***U***ncertainty based fusion is developed to incorporate logit bias into CLIP for few-shot classification. The experiments are conducted on several widely used benchmarks, and the results show AMU-Tuning clearly outperforms its counterparts while achieving state-of-the-art performance of CLIP based few-shot learning without bells and whistles.
+<div align="center">
+  <img src="framework.png"/>
+</div>
+
 ## Usage
 
 ### Environments
@@ -38,27 +42,48 @@ validataion
 python -c "import mindspore;mindspore.run_check()"
 ```
 
-### Data preparation
-Download and extract ImageNet train and val images from http://image-net.org/. (https://pytorch.org/docs/stable/torchvision/datasets.html#imagefolder)
+### Dataset
+Our dataset setup is primarily based on Tip-Adapter. Please follow [DATASET.md](https://github.com/gaopengcuhk/Tip-Adapter/blob/main/DATASET.md) to download official ImageNet and other 10 datasets.
 
-Our dataset is set up to primarily follow [CaFo](https://github.com/OpenGVLab/CaFo).
-### Evaluation
-To evaluate a pre-trained model on ImageNet val with GPUs run:
+### Foundation Models
+* The pre-tained weights of **CLIP** will be automatically downloaded by running.
+* The pre-tained weights of **MoCo-v3** can be download at [MoCo v3](https://github.com/facebookresearch/moco-v3).
 
-```
-CUDA_VISIBLE_DEVICES={device_ids}  python test.py --checkpoint_version={CHECKPOINT_VISION} --checkpoint_path={CHECKPOINT_PATH}
-```
-### Training
+## Get Started
 
-#### Train with ResNet
+### One-Line Command by Using `run.sh`
 
-We provide a script file where the specific parameters can be referenced in [parse_args.py](https://github.com/TJU-sjyj/MindSpore-AMU/parse_args.py)
+We provide `run.sh` with which you can complete the pre-training + fine-tuning experiment cycle in an one-line command.
 
-Run the training script:
+### Arguments
+- `clip_backbone` is the name of the backbone network of CLIP visual coders that will be used (e.g. RN50, RN101, ViT-B/16).  
+- `lr` learning rate for adapter training.  
+- `shots` number of samples per class used for training.  
+- `alpha` is used to control the effect of logit bias.  
+- `lambda_merge`  is a hyper-parameter in **Multi-branch Training**  
+
+More Arguments can be referenced in [parse_args.py]https://github.com/TJU-sjyj/AMU-Tuning/parse_args.py
+
+### Training Example
+You can use this command to train a **AMU adapter** with ViT-B-16 as CLIP's image encoder by 16-shot setting for 50 epochs.  
 
 ```bash
-sh run.sh
+CUDA_VISIBLE_DEVICES=0 python train.py\
+    --rand_seed 2 \
+    --torch_rand_seed 1\
+    --exp_name test_16_shot  \
+    --clip_backbone "ViT-B-16" \
+    --augment_epoch 1 \
+    --alpha 0.5\
+    --lambda_merge 0.35\
+    --train_epoch 50\
+    --lr 1e-3\
+    --batch_size 8\
+    --shots 16\
+    --root_path /media/sdd/dataset/imagenet-1k/ILSVRC2012 \
+    --load_aux_weight \
 ```
+
 ## Main Results
 |Method           | Acc-MindSpore  | Acc-PyTorch   | Checkpoint                                                          |
 | ------------------ | ----- | ------- | -------------------------- |
@@ -76,4 +101,4 @@ This repo benefits from [Tip](https://github.com/gaopengcuhk/Tip-Adapter) and [C
 
 
 ## Contact
-If you have any questions or suggestions, please feel free to contact us: .
+If you have any questions or suggestions, please feel free to contact us: tangyuwei@tju.edu.cn and linzhenyi@tju.edu.cn.
