@@ -85,13 +85,13 @@ CUDA_VISIBLE_DEVICES=0 python train.py\
 ```
 
 ## Main Results
-|Method           | Acc-MindSpore  | Acc-PyTorch   | Checkpoint                                                          |
-| ------------------ | ----- | ------- | -------------------------- |
-| MoCov3-ResNet50-16shot-lmageNet1k   |  69.98 |  70.02   |   [Download]              |
-| MoCov3-ResNet50-8shot-lmageNet1k   | 68.21  |   68.25     |[Download]|
-| MoCov3-ResNet50-4shot-lmageNet1k   |  65.79  |   65.92     |[Download]|
-| MoCov3-ResNet50-2shot-lmageNet1k   |  64.19 |  64.25   |    [Download]     |
-| MoCov3-ResNet50-1shot-lmageNet1k   |  62.57 |   62.60     |[Download]|
+|Method           | Acc-MindSpore  | Acc-PyTorch   | Checkpoint(PyTorch)|Checkpoint(MindSpore)|
+| ----------------| -------------- | ------- | ----------------- |---|
+| MoCov3-ResNet50-16shot-lmageNet1k  |69.98|70.02|[Download](https://drive.google.com/file/d/1U8V8aho9ne5Diz0swK9m_-1cEElflnMg/view?usp=drive_link)|[Download](https://drive.google.com/file/d/1FzvOUxfwv8MP3qpWJuRhYgJZQ-hGrcHh/view?usp=drive_link)|
+| MoCov3-ResNet50-8shot-lmageNet1k   |68.21|68.25|[Download](https://drive.google.com/file/d/1QmF3EoaxIohMzQHj6P7fmvK73ab0lfBP/view?usp=drive_link)|[Download](https://drive.google.com/file/d/1ICSjE5DfwfkTlV0b72XsYOVaj3Ej6XxB/view?usp=drive_link)|
+| MoCov3-ResNet50-4shot-lmageNet1k   |65.79|65.92|[Download](https://drive.google.com/file/d/1ad0-yVsN3JV_-7mbFlYq1mpM0XoviIUs/view?usp=drive_link)|[Download](https://drive.google.com/file/d/14CjUDy4-PMYsjSNpjn8NAHIu7FNm5TXt/view?usp=drive_link)|
+| MoCov3-ResNet50-2shot-lmageNet1k   |64.19|64.25|[Download](https://drive.google.com/file/d/15R9ohx9z2VsC0h7Z1gAeidWDy3bfHByu/view?usp=drive_link)|[Download](https://drive.google.com/file/d/18sMZ9ndF9rAGDD7XhtDvdY7Kqvp03SDi/view?usp=drive_link)|
+| MoCov3-ResNet50-1shot-lmageNet1k   |62.57|62.60|[Download](https://drive.google.com/file/d/19fEVFa241C4VZ88k2d8uVEAvkAuITzfI/view?usp=drive_link)|[Download](https://drive.google.com/file/d/1g-QoP1XB6JQkYV2av41IJ8IDoGUyuiPd/view?usp=drive_link)|
 
 
 
