@@ -62,7 +62,7 @@ We provide `run.sh` with which you can complete the pre-training + fine-tuning e
 - `alpha` is used to control the effect of logit bias.  
 - `lambda_merge`  is a hyper-parameter in **Multi-branch Training**  
 
-More Arguments can be referenced in [parse_args.py]https://github.com/TJU-sjyj/AMU-Tuning/parse_args.py
+More Arguments can be referenced in [parse_args.py](https://github.com/TJU-sjyj/AMU-Tuning/parse_args.py)
 
 ### Training Example
 You can use this command to train a **AMU adapter** with ViT-B-16 as CLIP's image encoder by 16-shot setting for 50 epochs.  
@@ -74,15 +74,16 @@ CUDA_VISIBLE_DEVICES=0 python train.py\
     --exp_name test_16_shot  \
     --clip_backbone "ViT-B-16" \
     --augment_epoch 1 \
-    --alpha 0.5\
+    --init_alpha 0.5\
     --lambda_merge 0.35\
     --train_epoch 50\
     --lr 1e-3\
     --batch_size 8\
     --shots 16\
-    --root_path /media/sdd/dataset/imagenet-1k/ILSVRC2012 \
-    --load_aux_weight \
+    --root_path 'your root path' \
 ```
+### Test Pretrained Model
+You can use the test scripts [test.sh](https://github.com/TJU-sjyj/MindSpore-AMU/blob/main/test.sh) to test the pretrained model. More Arguments can be referenced in [parse_args.py](https://github.com/TJU-sjyj/AMU-Tuning/parse_args.py)
 
 ## Main Results
 |Method           | Acc-MindSpore  | Acc-PyTorch   | Checkpoint(PyTorch)|Checkpoint(MindSpore)|
